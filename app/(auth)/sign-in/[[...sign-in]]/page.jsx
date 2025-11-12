@@ -1,5 +1,6 @@
 import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
-  return <SignIn fallbackRedirectUrl="/dashboard" />;
+  // Redirect to onboarding which exists in the app
+  return <SignIn fallbackRedirectUrl="/onboarding" />;
 }

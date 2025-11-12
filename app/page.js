@@ -4,6 +4,7 @@ import { ArrowRight, Stethoscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import SignUpCTA from "@/components/sign-up-cta";
 import Pricing from "@/components/pricing";
 import { creditBenefits, features, testimonials } from "@/lib/data";
 
@@ -52,14 +53,16 @@ export default function Home() {
 
             <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden">
               <Image
-  src="/banner2.png"
-  alt="banner"
-  fill
-  sizes="100vw"
-  priority
-  loading="eager"
-  style={{ objectFit: "cover" }}
-/>
+                src="/banner2.png"
+                alt="banner"
+                fill
+                // On small screens the image is full-bleed (100vw).
+                // On large screens it occupies the right column (≈50vw).
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                priority
+                loading="eager"
+                style={{ objectFit: "cover" }}
+              />
 
 
             </div>
@@ -231,13 +234,7 @@ export default function Home() {
                   healthcare the way it should be.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-emerald-600 text-white hover:bg-emerald-700"
-                  >
-                    <Link href="/sign-up">Sign Up Now</Link>
-                  </Button>
+                  <SignUpCTA />
                   <Button
                     asChild
                     variant="outline"
